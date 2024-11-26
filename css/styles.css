@@ -1,0 +1,883 @@
+/* Загальні стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Шапка */
+.header {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    background: url('../img/headerandherobg.png') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+}
+
+.logo strong {
+    font-weight: 700;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.header .nav ul li a {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header .nav ul li a:hover {
+    color: #CCF32F;
+}
+
+.header .cta-button {
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+}
+
+.header .cta-button:hover {
+    background: #CCF32F;
+    border-color: #CCF32F;
+    color: #000;
+}
+
+/* Героїчна секція */
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: left;
+    padding: 0 20px;
+    margin: 0;
+    width: 100%;
+}
+
+.hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    max-width: 500px;
+    margin-top: 0;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 56px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: left;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #fff;
+    opacity: 0.9;
+    text-align: left;
+}
+
+/* Полоска с ключевими словами */
+.keywords-strip {
+    width: 100%;
+    height: 90px;
+    background: #141B34;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.keywords-container {
+    display: flex;
+    gap: 40px;
+    animation: scrollKeywords 20s linear infinite;
+    white-space: nowrap;
+}
+
+.keyword {
+    color: #CCF32F;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes scrollKeywords {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Features Strip */
+.features-strip {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.features-content {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.features-content h2 {
+    font-size: 36px;
+    color: #141B34;
+    margin-bottom: 20px;
+}
+
+.features-description {
+    font-size: 18px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.features-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.feature-item {
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+}
+
+.feature-item i {
+    font-size: 40px;
+    color: #CCF32F;
+    margin-bottom: 20px;
+}
+
+.feature-item h4 {
+    font-size: 24px;
+    color: #141B34;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .features-container {
+        padding: 40px 15px;
+    }
+}
+
+/* Популярні напрямки */
+.popular-destinations {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    color: #141B34;
+    margin-bottom: 50px;
+}
+
+.destinations-wrapper {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.destinations-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.destinations-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.destinations-wrapper::-webkit-scrollbar-thumb {
+    background: #CCF32F;
+    border-radius: 4px;
+}
+
+.destination-card {
+    position: relative;
+    min-width: 300px;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.destination-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: transparent;
+    color: #fff;
+}
+
+.destination-info h3 {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.destination-info p {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    opacity: 0.9;
+}
+
+/* Підвал */
+.footer {
+    background-color: #141B34;
+    color: #fff;
+    padding: 60px 0 20px;
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h4 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-logo {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+    color: #ccc;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #CCF32F;
+}
+
+.footer-links i {
+    margin-right: 10px;
+    color: #CCF32F;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #CCF32F;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Секція послуг */
+.services-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.services-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #141B34;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.services-image {
+    flex: 1;
+}
+
+.services-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.services-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.service-card {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    height: 200px;
+}
+
+.service-icon {
+    font-size: 24px;
+    color: #141B34;
+}
+
+.service-card h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #141B34;
+}
+
+.service-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #CCF32F;
+    color: #141B34;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.service-link:hover {
+    background-color: #b3d129;
+    transform: translateX(-50%) scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    .header .container {
+        padding: 20px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .features-items {
+        flex-direction: column;
+    }
+
+    .destinations-wrapper {
+        padding: 0 20px;
+    }
+
+    .services-section {
+        padding: 60px 0;
+    }
+
+    .services-title {
+        font-size: 36px;
+        padding: 0 20px;
+    }
+
+    .services-content {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .services-image {
+        width: 100%;
+    }
+
+    .services-image img {
+        height: 300px;
+    }
+
+    .services-info {
+        width: 100%;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+}
+
+/* Завершені подорожі */
+.completed-trips {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.trips-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trips-row {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.top-row {
+    justify-content: center;
+}
+
+.bottom-row {
+    justify-content: center;
+}
+
+.trip-card {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.trip-card:hover {
+    transform: translateY(-10px);
+}
+
+.trip-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trip-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.trip-info h3 {
+    font-size: 22px;
+    color: #141B34;
+    margin: 0 0 5px 0;
+}
+
+.trip-info p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .trips-grid {
+        padding: 0 20px;
+    }
+    
+    .trip-card {
+        width: 300px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .trips-row {
+        flex-wrap: wrap;
+    }
+    
+    .trip-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* Відгуки */
+.testimonials {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.testimonial-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.rating {
+    color: #CCF32F;
+    font-size: 24px;
+    margin-bottom: 100px;
+}
+
+.rating i {
+    margin: 0 5px;
+}
+
+.testimonial-avatars {
+    position: relative;
+    height: 150px;
+    margin-top: 200px;
+}
+
+.avatar-circle {
+    position: relative;
+    width: 500px;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 0;
+}
+
+.avatar-item {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+    transition: all 0.3s ease;
+}
+
+.avatar-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.avatar-item:hover img {
+    border-color: #CCF32F;
+    transform: scale(1.2);
+}
+
+.avatar-item:hover {
+    color: #CCF32F;
+    transform: scale(1.2) translateY(-10px);
+}
+
+.avatar-item:nth-child(1) { transform: translateX(-50%) rotate(-60deg) translateY(-250px); }
+.avatar-item:nth-child(2) { transform: translateX(-50%) rotate(-30deg) translateY(-230px); }
+.avatar-item:nth-child(3) { transform: translateX(-50%) translateY(-240px); }
+.avatar-item:nth-child(4) { transform: translateX(-50%) rotate(30deg) translateY(-230px); }
+.avatar-item:nth-child(5) { transform: translateX(-50%) rotate(60deg) translateY(-250px); }
+
+@media screen and (max-width: 768px) {
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+    
+    .testimonial-text {
+        font-size: 16px;
+    }
+    
+    .avatar-circle {
+        width: 300px;
+        height: 150px;
+    }
+    
+    .avatar-item {
+        font-size: 40px;
+    }
+    
+    .avatar-item:nth-child(1) { transform: translateX(-50%) rotate(-60deg) translateY(-80px); }
+    .avatar-item:nth-child(2) { transform: translateX(-50%) rotate(-30deg) translateY(-90px); }
+    .avatar-item:nth-child(3) { transform: translateX(-50%) translateY(-100px); }
+    .avatar-item:nth-child(4) { transform: translateX(-50%) rotate(30deg) translateY(-90px); }
+    .avatar-item:nth-child(5) { transform: translateX(-50%) rotate(60deg) translateY(-80px); }
+}
+
+/* Адаптивные стили */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .destinations-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .features-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .destinations-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-content {
+        flex-direction: column;
+    }
+
+    .services-image {
+        margin-bottom: 30px;
+    }
+
+    .trips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trips-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .hero-content {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .keywords-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .features-items {
+        grid-template-columns: 1fr;
+    }
+
+    .destinations-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .services-info {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .avatar-circle {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .trips-row {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-text {
+        font-size: 16px;
+    }
+
+    .avatar-circle {
+        transform: scale(0.6);
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Гамбургер меню для мобильных */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+    }
+
+    .nav.active {
+        display: block;
+    }
+}
